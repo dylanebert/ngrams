@@ -10,11 +10,7 @@ with open('words.txt') as f:
 
 counts = {}
 with open(args.input) as f:
-    lines = f.read().splitlines()
-    n = len(lines)
-    for i, line in enumerate(lines):
-        if i % 1000 == 0:
-            print('{0} of {1}'.format(i, n), end='\r')
+    for line in f:
         ngram, year, match_count, volume_count = line.split('\t')
         if ngram.split('_')[0].lower() in words:
             if ngram in counts:
