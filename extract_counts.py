@@ -10,7 +10,7 @@ with open('words.txt') as f:
 
 counts = {}
 with open(args.input) as f:
-    lines = f.read().splitlines()[:10000]
+    lines = f.read().splitlines()
     n = len(lines)
     for i, line in enumerate(lines):
         if i % 1000 == 0:
