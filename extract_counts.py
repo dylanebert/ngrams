@@ -12,7 +12,8 @@ counts = {}
 with open(args.input) as f:
     for line in f:
         ngram, year, match_count, volume_count = line.split('\t')
-        if ngram.split('_')[0].lower() in words:
+        ngram = ngram.lower()
+        if ngram.split('_')[0] in words:
             if ngram in counts:
                 counts[ngram] += int(match_count)
             else:
