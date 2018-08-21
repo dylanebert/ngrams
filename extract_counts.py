@@ -1,5 +1,6 @@
 import re
 import argparse
+import os
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-i', '--input', help='input file', type=str, required=True)
@@ -19,6 +20,6 @@ with open(args.input) as f:
             else:
                 counts[ngram] = int(match_count)
 
-with open('counts', 'a') as f:
+with open('{0}_counts'.format(args.input), 'w+') as f:
     for k, v in counts.items():
         f.write('{0}\t{1}\n'.format(k, v))
