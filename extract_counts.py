@@ -6,7 +6,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('-i', '--input', help='input file', type=str, required=True)
 args = parser.parse_args()
 
-with open('words.txt') as f:
+with open('words') as f:
     words = f.read().splitlines()
 
 counts = {}
